@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:hug/learn_page.dart';
 import 'package:intl/intl.dart';
 
 void main() {
@@ -172,7 +173,7 @@ class _MyScaffoldState extends State<MyScaffold> {
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Container(
+       InkWell(child: Container(
           width: 80,
           height: 80,
           clipBehavior: Clip.antiAlias,
@@ -193,7 +194,10 @@ class _MyScaffoldState extends State<MyScaffold> {
             Icons.construction,
             size: 48,
           ),
-        ),
+        ),onTap: (){
+         Navigator.push(context, MaterialPageRoute(builder: (context)=>const LearnPage()));
+       },
+       ),
         const SizedBox(height: 10,),
         const Text("HTML 基础",style: TextStyle(fontSize: 16,color: Colors.black),),
        const SizedBox(height: 10,),
@@ -223,7 +227,7 @@ class _MyScaffoldState extends State<MyScaffold> {
           clipBehavior: Clip.antiAlias,
           alignment: Alignment.center,
           decoration:  BoxDecoration(
-              color: Colors.grey[400],
+              color: Colors.blue[400],
               boxShadow: const [
                 BoxShadow(
                   offset: Offset(0.0,0.0),
@@ -336,7 +340,8 @@ class _MyScaffoldState extends State<MyScaffold> {
       statusBarColor: Colors.cyan[700]
     ));
     return Scaffold(
-      appBar: PreferredSize(child: appBar(),preferredSize: const Size(double.infinity,64),),
+      appBar: PreferredSize(preferredSize:const Size(double.infinity,64),
+      child: appBar()),
       backgroundColor: Colors.white,
       body:SingleChildScrollView(
        child: Container(
