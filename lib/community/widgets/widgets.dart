@@ -45,12 +45,12 @@ class CodeCoach extends StatelessWidget {
             ],
           ),
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              fuctionIcon(Icons.map, "2位地图", "高"),
-              fuctionIcon(Icons.map, "2位地图", "高"),
-              fuctionIcon(Icons.map, "2位地图", "高"),
-              fuctionIcon(Icons.map, "2位地图", "高"),
+              functionIcon(Icons.add_chart, "2位地图", "高"),
+              functionIcon(Icons.access_time_filled_rounded, "2位地图", "高"),
+              functionIcon(Icons.accessible_sharp, "2位地图", "高"),
+              functionIcon(Icons.add_alarm_rounded, "2位地图", "高"),
             ],
           )
         ],
@@ -59,7 +59,7 @@ class CodeCoach extends StatelessWidget {
   }
 }
 
-Widget fuctionIcon(IconData icon, String title, String type) {
+Widget functionIcon(IconData icon, String title, String type) {
   var paint = Paint();
   paint.color = Colors.black87;
   return SizedBox(
@@ -71,7 +71,8 @@ Widget fuctionIcon(IconData icon, String title, String type) {
         children: [
           Icon(
             icon,
-            size: 80,
+            size: 60,
+            color: Colors.cyan,
           ),
           Text(title),
           Text(

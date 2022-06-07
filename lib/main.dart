@@ -27,10 +27,10 @@ class MyScaffold extends StatefulWidget {
 
   @override
   State<StatefulWidget> createState() => _MyScaffoldState();
-  
 }
 
-class _MyScaffoldState extends State<MyScaffold> with SingleTickerProviderStateMixin {
+class _MyScaffoldState extends State<MyScaffold>
+    with SingleTickerProviderStateMixin {
   var tabChild = [
     const MainPage(),
     const CommunityPage(),
@@ -52,41 +52,35 @@ class _MyScaffoldState extends State<MyScaffold> with SingleTickerProviderStateM
         systemNavigationBarColor: Colors.black,
         statusBarColor: Colors.cyan[700]));
     return MaterialApp(
-      home: Scaffold(
-        body: TabBarView(
-          controller: controller,
-          children: tabChild,
-        ),
-        bottomNavigationBar:
-         Material(
-color: Colors.white,
-   child:  TabBar(
-   controller: controller,
-   labelColor: Colors.deepPurpleAccent,
-   unselectedLabelColor: Colors.black26,
-   tabs: const [
-     Tab(
-    text: "学习",
-    icon:  Icon(Icons.brightness_5),
-    ),
-     Tab(
-    text: "社区",
-    icon:  Icon(Icons.map),
-    ),
-     Tab(
-    text: "讨论",
-    icon:  Icon(Icons.directions_run),
-        ),
-        Tab(
-    text: "我的",
-    icon:  Icon(Icons.portrait),
-        ),  
-   ]
-      ),
-      )
-      )
-    )
-    ;
+        home: Scaffold(
+            body: TabBarView(
+              controller: controller,
+              children: tabChild,
+            ),
+            bottomNavigationBar: Material(
+              color: Colors.white,
+              child: TabBar(
+                  controller: controller,
+                  labelColor: Colors.deepPurpleAccent,
+                  unselectedLabelColor: Colors.black26,
+                  tabs: const [
+                    Tab(
+                      text: "学习",
+                      icon: Icon(Icons.brightness_5),
+                    ),
+                    Tab(
+                      text: "社区",
+                      icon: Icon(Icons.map),
+                    ),
+                    Tab(
+                      text: "讨论",
+                      icon: Icon(Icons.directions_run),
+                    ),
+                    Tab(
+                      text: "我的",
+                      icon: Icon(Icons.portrait),
+                    ),
+                  ]),
+            )));
   }
 }
-
