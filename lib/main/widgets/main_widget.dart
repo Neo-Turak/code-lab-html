@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hug/clab/index.dart';
 import 'package:hug/learn_page.dart';
 
 
@@ -18,7 +19,7 @@ class MainWidget extends StatelessWidget {
         child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              provideOverview(),
+              provideOverview(context),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -65,35 +66,40 @@ class MainWidget extends StatelessWidget {
   }
 
   //概述
-  Widget provideOverview(){
+  Widget provideOverview(BuildContext context){
     return  Column(
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Container(
-          width: 80,
-          height: 80,
-          clipBehavior: Clip.antiAlias,
-          alignment: Alignment.center,
-          decoration:  BoxDecoration(
-              color: Colors.green,
-              boxShadow: const [
-                BoxShadow(
-                  offset: Offset(0.0,0.0),
-                  color: Colors.black,
-                  blurRadius: 2.0,
-                  spreadRadius: 0.0,
-                )
+        InkWell(
+          child: Container(
+            width: 80,
+            height: 80,
+            clipBehavior: Clip.antiAlias,
+            alignment: Alignment.center,
+            decoration:  BoxDecoration(
+                color: Colors.green,
+                boxShadow: const [
+                  BoxShadow(
+                    offset: Offset(0.0,0.0),
+                    color: Colors.black,
+                    blurRadius: 2.0,
+                    spreadRadius: 0.0,
+                  )
+                ],
+                borderRadius: BorderRadius.circular(40)
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children:const [
+                Text("</>",style: TextStyle(fontSize: 36,fontWeight: FontWeight.bold,color: Colors.white),),
+                Text("HTML",style: TextStyle(fontSize: 16,color: Colors.white,fontWeight: FontWeight.bold),),
               ],
-              borderRadius: BorderRadius.circular(40)
+            ),
           ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children:const [
-              Text("</>",style: TextStyle(fontSize: 36,fontWeight: FontWeight.bold,color: Colors.white),),
-              Text("HTML",style: TextStyle(fontSize: 16,color: Colors.white,fontWeight: FontWeight.bold),),
-            ],
-          ),
+          onTap: (){
+                 Navigator.push(context, MaterialPageRoute(builder: (context)=>const CodeLab()));
+          },
         ),
         const SizedBox(height: 10,),
         const Text("概述",style: TextStyle(fontSize: 16,color: Colors.grey),)

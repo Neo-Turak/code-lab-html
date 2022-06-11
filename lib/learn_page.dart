@@ -1,8 +1,11 @@
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:code_text_field/code_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
+import 'package:highlight/languages/xml.dart';
+import 'package:flutter_highlight/themes/monokai-sublime.dart';
 
 class LearnPage extends StatefulWidget {
   const LearnPage({Key? key}) : super(key: key);
@@ -18,13 +21,11 @@ class _LearnState extends State<LearnPage> {
   final urlEnd = "</body>";
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: Container(
-          color: Colors.grey[200],
-          width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.height,
-          child: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
+    return MaterialApp(home:
+    Scaffold(
+      appBar: PreferredSize(child: appBar(), 
+      preferredSize:const Size(double.infinity,48)),
+      body: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
             Container(
               alignment: Alignment.centerLeft,
               height: 48,
@@ -87,17 +88,12 @@ class _LearnState extends State<LearnPage> {
             Container(
                 height: 100,
                 margin: const EdgeInsets.symmetric(horizontal: 10),
-                child: WebView(
-                  onWebViewCreated: (controller) => {
-                    controller.loadUrl(Uri.dataFromString(
-                            urlHead +
-                                "<div style='border: 1px solid #2b2b2b;background: #2B2B2B;height:80px ;border-radius: 5px;</style>'><p>我是一个段落</p></div>" +
-                                urlEnd,
-                            mimeType: "text/html",
-                            encoding: utf8)
-                        .toString())
-                  },
-                )),
+                child: CodeField(controller: CodeController(
+                  language:xml,
+                  text: '<p>Hello World</p>',
+                  theme: monokaiSublimeTheme,
+                  ),)
+                ),
             Container(
               margin: const EdgeInsets.only(top: 10),
               width: double.infinity,
@@ -143,7 +139,6 @@ class _LearnState extends State<LearnPage> {
             ),
           ]),
         ),
-      ),
     );
   }
 
@@ -154,3 +149,34 @@ class _LearnState extends State<LearnPage> {
     super.initState();
   }
 }
+
+//顶部栏
+  Widget appBar() {
+    return Container(
+      height: 48,
+      width: double.infinity,
+      padding: const EdgeInsets.symmetric(horizontal: 10),
+      margin: const EdgeInsets.only(bottom: 10),
+      color: Colors.deepOrange,
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: const [
+          Icon(
+            Icons.menu,
+            color: Colors.white,
+            size: 24,
+          ),
+          SizedBox(width: 10,),
+          Text(
+            "基础知识",
+            textAlign: TextAlign.center,
+            style: TextStyle(color: Colors.white,fontSize: 16,fontWeight: FontWeight.bold),
+          ),
+          Icon(Icons.save,
+          color: Colors.white,
+          )
+        ],
+      ),
+    );
+  }

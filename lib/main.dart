@@ -31,7 +31,7 @@ class MyScaffold extends StatefulWidget {
 
 class _MyScaffoldState extends State<MyScaffold>
     with SingleTickerProviderStateMixin {
-  var tabChild = [
+    var tabChild = [
     const MainPage(),
     const CommunityPage(),
     const DiscussPage(),

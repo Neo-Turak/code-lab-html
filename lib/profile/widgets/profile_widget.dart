@@ -20,11 +20,26 @@ class ProfileWidget extends StatelessWidget {
           FunctionButton(icon: Icons.bar_chart, content: "学习进度", function:()=>{
             SmartDialog.showToast("学习进度")
           }),
-          FunctionButton(icon: Icons.bar_chart, content: "学习进度", function:()=>{
+          FunctionButton(icon: Icons.bar_chart, content: "证书", function:()=>{
             SmartDialog.showToast("学习进度")
           }),
+         const Spacer(),
+         Container(
+          margin: const EdgeInsets.only(bottom: 20),
+          width: 200,
+          clipBehavior: Clip.antiAlias,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(4),
+              color: Colors.white,
+          ),
+          child: 
+          Image.asset("assets/images/logo.png",
+          fit: BoxFit.cover,
+          )
+         )
         ],
       ),
+     
     )
     );
   }
