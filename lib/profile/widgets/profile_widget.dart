@@ -23,6 +23,22 @@ class ProfileWidget extends StatelessWidget {
           FunctionButton(icon: Icons.bar_chart, content: "证书", function:()=>{
             SmartDialog.showToast("学习进度")
           }),
+          Container(
+            color: Colors.white,
+            alignment: Alignment.bottomCenter,
+            margin:const  EdgeInsets.all(8),
+            height: 100,
+            child: GridView.count(crossAxisCount: 4,
+              mainAxisSpacing: 10,
+              crossAxisSpacing: 8,
+              children: [
+                ChildMenu("收藏"),
+                ChildMenu("我的库"),
+                ChildMenu("兑换中心"),
+                ChildMenu("评论")
+              ],
+            ),
+          ),
          const Spacer(),
          Container(
           margin: const EdgeInsets.only(bottom: 20),
@@ -36,10 +52,9 @@ class ProfileWidget extends StatelessWidget {
           Image.asset("assets/images/logo.png",
           fit: BoxFit.cover,
           )
-         )
+         ),
         ],
       ),
-     
     )
     );
   }

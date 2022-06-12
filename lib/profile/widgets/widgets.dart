@@ -148,3 +148,16 @@ class FunctionButton extends StatelessWidget {
   }
 }
 
+Widget ChildMenu(String name){
+  return Container(
+    height: 40,
+    alignment: Alignment.center,
+      decoration: const BoxDecoration(
+        borderRadius: BorderRadius.all(Radius.circular(6)),
+        color: Colors.blue
+      ),
+      child: Text(name,style:const  TextStyle(color: Colors.white,fontSize: 14,fontWeight: FontWeight.w900),)
+  
+  );
+}
+
