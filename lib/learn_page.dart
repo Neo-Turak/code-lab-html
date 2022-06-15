@@ -23,28 +23,14 @@ class _LearnState extends State<LearnPage> {
   Widget build(BuildContext context) {
     return MaterialApp(home:
     Scaffold(
-      appBar: PreferredSize(child: appBar(), 
+      appBar: PreferredSize(child: appBar(context),
       preferredSize:const Size(double.infinity,48)),
       body: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
-            Container(
-              alignment: Alignment.centerLeft,
-              height: 48,
-              color: Colors.white,
-              child: InkWell(
-                child: const Icon(
-                  Icons.close,
-                  color: Colors.black,
-                ),
-                onTap: () {
-                  Navigator.pop(context);
-                },
-              ),
-            ),
             Container(
                 alignment: Alignment.centerLeft,
                 margin: const EdgeInsets.only(left: 10, top: 10),
                 child: const Text(
-                  "欢迎到HTML！",
+                  "欢迎到来到HTML！",
                   style: TextStyle(
                       fontSize: 20,
                       color: Color(0xFF2b2b2b),
@@ -63,8 +49,6 @@ class _LearnState extends State<LearnPage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: const [
-                  Text("Html stands for HyperText Markup Language",
-                      style: TextStyle(fontSize: 14, color: Colors.black)),
                   SizedBox(
                     height: 10,
                   ),
@@ -151,7 +135,7 @@ class _LearnState extends State<LearnPage> {
 }
 
 //顶部栏
-  Widget appBar() {
+  Widget appBar(BuildContext context) {
     return Container(
       height: 48,
       width: double.infinity,
@@ -161,19 +145,24 @@ class _LearnState extends State<LearnPage> {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: const [
-          Icon(
-            Icons.menu,
+        children:  [
+          InkWell(
+            onTap: (){
+              Navigator.pop(context);
+            },
+            child:
+          const Icon(
+            Icons.arrow_back_ios,
             color: Colors.white,
             size: 24,
           ),
-          SizedBox(width: 10,),
-          Text(
+          ),
+          const Text(
             "基础知识",
             textAlign: TextAlign.center,
             style: TextStyle(color: Colors.white,fontSize: 16,fontWeight: FontWeight.bold),
           ),
-          Icon(Icons.save,
+          const Icon(Icons.save,
           color: Colors.white,
           )
         ],
