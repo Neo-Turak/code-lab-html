@@ -57,7 +57,7 @@ class MainWidget extends StatelessWidget {
           ),
           SizedBox(width: 10,),
           Text(
-            "HTML 基础知识",
+            "极客学习-HTML",
             style: TextStyle(color: Colors.white,fontSize: 16,fontWeight: FontWeight.bold),
           ),
         ],
@@ -139,7 +139,7 @@ class MainWidget extends StatelessWidget {
        },
        ),
         const SizedBox(height: 10,),
-        const Text("HTML 基础",style: TextStyle(fontSize: 16,color: Colors.black),),
+        const Text("极客学习-HTML",style: TextStyle(fontSize: 16,color: Colors.black),),
        const SizedBox(height: 10,),
        Row(
          mainAxisAlignment: MainAxisAlignment.center,

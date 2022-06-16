@@ -3,11 +3,37 @@ import 'package:flutter/cupertino.dart';
 import 'package:hug/community/widgets/widgets.dart';
 
 Widget communityWidget(){
-    return DefaultTabController(length: 2, child:
+    return const DefaultTabController(length: 2, child:
      Scaffold(
-      appBar: AppBar(
-        toolbarHeight: 0,
-        bottom:   TabBar(
+      appBar:CommunityAppBar(),
+       body: TabBarView(
+        children: [
+        Icon(Icons.code),
+        Icon(Icons.difference_outlined)
+      ],
+      ), 
+      ),
+    );
+  }
+
+class CommunityAppBar extends StatefulWidget implements PreferredSizeWidget{
+  const CommunityAppBar({Key? key}) : super(key: key);
+
+  @override
+  State<StatefulWidget> createState()=> _CommunityState();
+
+
+  @override
+  Size get preferredSize => const Size(double.infinity,48);
+
+}
+
+class _CommunityState extends State<CommunityAppBar>{
+  @override
+  Widget build(BuildContext context) {
+   return Container(
+        color: Colors.greenAccent,
+        child:TabBar(
             indicator: BoxDecoration(
                 borderRadius: BorderRadius.circular(50), // Creates border
                 color: Colors.brown),
@@ -22,16 +48,9 @@ Widget communityWidget(){
                 text: "讨论",
               )
         ]),
-      ),
-      body: const TabBarView(
-        children: [
-        Icon(Icons.code),
-        Icon(Icons.difference_outlined)
-      ],
-      ),
-    ),
-    );
+      );
+    
   }
 
-
+}
 

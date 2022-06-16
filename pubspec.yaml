@@ -41,6 +41,34 @@ dependencies:
   feature_folder_cli: ^0.0.4
   flutter_smart_dialog: ^4.5.1
   code_text_field: ^1.0.2
+  badges: ^2.0.2
+  banner_image: ^1.0.6
+  build_runner: any
+  cached_network_image: ^3.2.1
+  connectivity: ^3.0.6
+  date_format: ^2.0.6
+  dio: ^4.0.6
+  dio_http2_adapter: ^2.0.0
+  encrypt: ^5.0.1
+  equatable: any
+  flustars: ^2.0.1
+  flutter_launcher_icons_maker: ^0.10.1
+  flutter_localizations:
+    sdk: flutter
+  flutter_picker: ^2.0.3
+  flutter_screenutil: ^5.5.3+2
+  freezed: any
+  freezed_annotation: any
+  get: ^4.6.5
+  http_parser: ^4.0.1
+  json_annotation: any
+  json_serializable: any
+  keyboard_actions: ^4.0.0
+  oktoast: ^3.2.0
+  photo_view: ^0.14.0
+  qr_flutter: ^4.0.0
+  shared_preferences: ^2.0.15
+  flutter_svg: ^1.1.0
 
 dev_dependencies:
   flutter_test:

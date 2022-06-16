@@ -33,3 +33,12 @@ TextStyle bold24Roboto = const TextStyle(
     ),
   );
 }
+
+const banners = <String>[
+  "http://192.168.101.67/app/26.jpg",
+  "http://192.168.101.67/app/27.jpg",
+  "http://192.168.101.67/app/28.jpg",
+  "http://192.168.101.67/app/29.jpg",
+  "http://192.168.101.67/app/30.jpg",
+  "http://192.168.101.67/app/31.jpg"
+];

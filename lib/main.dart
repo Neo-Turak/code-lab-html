@@ -73,7 +73,7 @@ class _MyScaffoldState extends State<MyScaffold>
                       icon: Icon(Icons.map),
                     ),
                     Tab(
-                      text: "讨论",
+                      text: "头条",
                       icon: Icon(Icons.directions_run),
                     ),
                     Tab(
