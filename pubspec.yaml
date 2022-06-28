@@ -38,6 +38,7 @@ dependencies:
   intl: ^0.17.0
   webview_flutter: ^3.0.4
   webview_flutter_plus: ^0.3.0+2
+  # ff generate -n <feature_name>
   feature_folder_cli: ^0.0.4
   flutter_smart_dialog: ^4.5.1
   code_text_field: ^1.0.2

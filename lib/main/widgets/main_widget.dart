@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hug/cherry/index.dart';
 import 'package:hug/clab/index.dart';
 import 'package:hug/learn_page.dart';
 
@@ -28,7 +29,7 @@ class MainWidget extends StatelessWidget {
                 provideChallenge(),
               ],
             ),
-              provideStudy(),
+              provideStudy(context),
               provideHtml5(),
               provideReward(),
     ]),
@@ -256,8 +257,10 @@ class MainWidget extends StatelessWidget {
   }
 
 //学习
-  Widget provideStudy(){
-    return Container(
+  Widget provideStudy(BuildContext context){
+    return InkWell(
+      child: 
+     Container(
       width: 130,
       height: 40,
       alignment: Alignment.center,
@@ -271,5 +274,9 @@ class MainWidget extends StatelessWidget {
           ]
       ),
       child: const Text("继续学习",),
+    ),
+    onTap: (){
+       Navigator.push(context, MaterialPageRoute(builder: (context)=>const CherryPickPage()));
+    },
     );
   }
